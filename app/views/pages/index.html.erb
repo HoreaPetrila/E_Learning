@@ -1,0 +1,50 @@
+<div class="slider">
+  <ul class="slides">
+    <li>
+      <%= image_tag('cover1.jpeg') %>
+        <!-- random image -->
+        <div class="caption center-align">
+          <h3>Aplicatie E-Learning </h3>
+          <h4 class="light grey-text text-lighten-3">Horea Petrila</h4>
+          <%= link_to 'Start Learning NOW', new_user_registration_path, class: 'waves-effect waves-light btn-large'%>
+        </div>
+    </li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+<div class="row"></div>
+<div class="row">
+   <nav>
+    <div class="nav-wrapper">
+      
+       <%= form_tag(courses_all_path, :method => "get", id: "search") do %>
+          <div class="input-field">
+           <%= text_field_tag :search, params[:search], placeholder: "Search Courses", type: "search" %>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+          </div>     
+      <% end %>
+    </div>
+  </nav>
+</div>
+  <div>
+    <h4 class="center-align">Ultimele cursuri</h4>
+  </div>
+  
+  <div class="row">
+    <% Course.last(5).reverse.each do |course| %>
+     <%= render( :partial => 'cards/card', :locals => { course: course }) %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+
+ $(document).ready(function(){
+      $('.slider').slider();
+    });
+
+</script>
