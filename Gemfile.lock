@@ -73,6 +73,7 @@ GEM
       warden (~> 1.2.3)
     erubi (1.9.0)
     execjs (2.7.0)
+    ffi (1.12.2)
     ffi (1.12.2-x64-mingw32)
     ffi (1.12.2-x86-mingw32)
     font-awesome-rails (4.7.0.5)
@@ -119,13 +120,16 @@ GEM
     minitest (5.14.0)
     nested_form (0.3.2)
     nio4r (2.5.2)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x86-mingw32)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     public_suffix (4.0.5)
-    puma (3.12.4)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-pjax (1.1.0)
       nokogiri (~> 1.5)
@@ -228,6 +232,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x64-mingw32
   x86-mingw32
 
@@ -242,7 +247,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.1)
   materialize-sass
-  puma (~> 3.7)
+  puma (~> 4.3)
   rails (~> 5.1.1)
   rails_admin (~> 1.2)
   sass-rails (~> 5.0)
